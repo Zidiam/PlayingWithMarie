@@ -1,0 +1,22 @@
+﻿/Adds number as you enter them and 0 will quit the program
+/Cannot add negative inputs will quit program
+Jns Adding
+Load Sum
+Output
+Halt
+
+Adding, Load Sum
+loop, Load Sum
+Load Sum
+Input
+Store in
+Skipcond 800
+JumpI Adding
+Load Sum
+Add in
+Store Sum
+Output
+Jump loop
+
+Sum, DEC 0
+in, DEC 0

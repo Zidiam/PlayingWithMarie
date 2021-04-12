@@ -1,0 +1,71 @@
+﻿/Input N to get N!
+/Errors occur if input is a negative
+/7 is the largest input anything greater will cause error
+
+Input
+Store N
+Jns MultiplyN
+Load Answer
+Output
+Halt
+
+MultiplyN, Load N
+Skipcond 800
+JumpI MultiplyN
+loop2, Load N
+    Load Answer
+    Store X
+    Load N2
+    Store Y
+    Jns multiply1
+    Load Temp
+    Store Answer
+	Clear
+	Store Temp
+    Load N2
+    Add One
+    Store N2
+    Load N
+    Subt One
+    Store N
+    Skipcond 800
+	JumpI MultiplyN
+    Jump loop2
+    
+check, Load X
+Load X
+Subt Y
+Skipcond 800
+Jump switch
+JumpI check
+
+switch, Load X
+Load X
+Store Temp
+Load Y
+Store X
+Load Temp
+Store Y
+Clear
+Store Temp
+JumpI check
+    
+multiply1, Load Temp
+Jns check
+loop, Load Temp
+  Add X
+  Store Temp
+  Load Y
+  Subt One
+  Store Y
+  Skipcond 800
+  JumpI multiply1
+  Jump loop
+  
+N, DEC 0
+X, DEC 0
+Y, DEC 0
+One, DEC 1
+Answer, DEC 0
+Temp, DEC 0
+N2, DEC 1

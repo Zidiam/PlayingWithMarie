@@ -1,0 +1,69 @@
+﻿/First three inputs are added to Sum and then last input is multiplied by 3 and added to sum
+/Sum prints and Average prints
+/negative inputs will display wrong results
+/Large inputs can result in overflow error
+Input
+Store A
+Input
+Store B
+Input
+Store C
+Input
+Store D
+Load Temp
+JnS Add3
+Store D
+Load Sum
+Jns Total
+Store Sum
+Output
+Jns Average4
+Load Average
+Output
+Halt
+
+A, DEC 0
+B, DEC 0
+C, DEC 0
+D, DEC 0
+Temp, DEC 0
+Sum, DEC 0
+Four, DEC 4
+Sub, DEC 0
+Temp2, DEC 0
+Average, DEC 0
+One, DEC 1
+
+Add3, HEX 0
+Add D
+Add D
+Add D
+JumpI Add3
+
+Total, HEX 0
+Add A
+Add B
+Add C
+Add D
+JumpI Total
+
+check, Load Sum
+	skipcond 400
+	jump subone
+    JumpI Average4
+
+subone, Load Average
+	Subt One
+	Store Average
+
+Average4, HEX 0
+loop, Load Sum
+	Subt Four
+    Store Sum
+    Load Average
+	Add One
+	Store Average
+    Load Sum
+	Skipcond 800
+	Jump check
+    Jump loop

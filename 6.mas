@@ -1,0 +1,41 @@
+﻿/Input number to get N2
+/80 is the greatest input you can put anything greater will result in overflow error
+/Anything negative will also get an error
+
+Input
+Store N
+Jns N2
+Load Answer
+Output
+Halt
+
+N2, Load N
+Skipcond 800
+JumpI N2
+Load Answer
+Add Twelve
+Store Answer
+Store Temp
+Load N
+Subt One
+Store N
+loop, Load N
+	Load N
+    Skipcond 800
+	JumpI N2
+	Subt One
+    Store N
+    Load Temp
+    Add Ten
+    Store Temp
+    Load Answer
+    Add Temp
+    Store Answer
+	Jump loop
+    
+N, DEC 0
+Answer, DEC 0
+Ten, DEC 10
+Twelve, DEC 12
+Temp, DEC 0
+One, DEC 1

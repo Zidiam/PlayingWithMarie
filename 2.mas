@@ -1,0 +1,51 @@
+﻿/Multiplies two numbers and will do it quick because it re aranges input to make the program faster
+/Negative inputs display wrong results
+/0 to quit program
+/Large Inputs result in overflow error
+Input
+Store X
+Input
+Store Y
+JnS multiply1
+Load Temp
+Store Answer
+Output
+Halt
+
+check, Load X
+Load X
+Subt Y
+Skipcond 800
+Jump switch
+JumpI check
+
+switch, Load X
+Load X
+Store Temp
+Load Y
+Store X
+Load Temp
+Store Y
+Clear
+Store Temp
+JumpI check
+    
+multiply1, Load Temp
+Jns check
+loop, Load Temp
+  Add X
+  Store Temp
+  Load Y
+  Subt One
+  Store Y
+  Skipcond 800
+  JumpI multiply1
+  Jump loop
+
+
+
+One, DEC 1
+X, DEC 0
+Y, DEC 0
+Answer, DEC 0
+Temp, DEC 0

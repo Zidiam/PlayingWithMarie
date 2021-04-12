@@ -1,0 +1,30 @@
+﻿/Input a number and it will give you the sum of numbers 1+2+3....+N
+/Negative inputs will terminate program
+Input
+Store N
+JnS SumN
+Load Sum
+Output
+Halt
+
+SumN, Load N
+loop, Load N
+  Load N
+  Skipcond 800
+  JumpI SumN
+  Load temp
+  Add One
+  Store temp
+  Load Sum
+  Add temp
+  Store Sum
+  Clear
+  Load N
+  Subt One
+  Store N
+  Jump loop
+
+N, DEC 0
+Sum, DEC 0
+One, DEC 1
+temp, DEC 0

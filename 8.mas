@@ -1,0 +1,31 @@
+﻿/Input a Number to get the Fibonacci number
+/Error occurs if you input a negative number
+/22 is the highest number you can input before getting an overflow error
+Input
+Store N
+Jns Fibonacci
+Load First
+Output
+Halt
+
+
+Fibonacci, Load N
+loop, Load N
+	Skipcond 800
+	JumpI Fibonacci
+	Load Second
+	Store temp
+	Add First
+	Store Second
+    Load temp
+	Store First
+	Load N
+    Subt One
+    Store N
+    Jump loop
+    
+N, DEC 0
+First, DEC 0
+Second, DEC 1
+temp, DEC 0
+One, DEC 1

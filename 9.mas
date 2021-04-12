@@ -1,0 +1,96 @@
+﻿/Calculator that can multiply and add numbers
+/First go around: First input is number 1, Second is the symbol, third is number 2
+/Second go around: First input is symbol, second is number
+/Outputs each calculation and answer in the end as well
+/For symbols: 0: Quit, Multiply: 1, Add: 2
+/If you input a wrong symbol such as -1 or 3 program breaks
+Input
+Store in1
+Jns inputloop
+Load in1
+Output
+Halt
+
+inputloop, Load in1
+loopinside, Load in1
+  Input
+  Store calc
+  Skipcond 800
+  JumpI inputloop
+  Input
+  Store in2
+  Skipcond 400
+  JnS calculation
+  Load in1
+  Output
+  JumpI inputloop
+
+calculation, Load calc
+loopcalc, Load calc
+Load calc
+Subt One
+Store calc
+Skipcond 800
+Jns multiply
+Load calc
+Subt One
+Store calc
+Skipcond 800
+Jns add
+Load Temp
+Store in1
+Output
+Clear
+Store Temp
+Jump loopinside
+
+add, Load in1
+Load calc
+Add reset
+Store calc
+Load in1
+Add in2
+Store Temp
+JumpI add
+
+check, Load in1
+Load in1
+Subt in2
+Skipcond 800
+Jump switch
+JumpI check
+
+switch, Load in1
+Load in1
+Store Temp
+Load in2
+Store in1
+Load Temp
+Store in2
+Clear
+Store Temp
+JumpI check
+
+multiply, Load Temp
+Load calc
+Add reset
+Store calc
+Jns check
+loop, Load Temp
+  Add in1
+  Store Temp
+  Load in2
+  Subt One
+  Store in2
+  Skipcond 800
+  JumpI multiply
+  Jump loop
+
+
+
+One, DEC 1
+Temp, DEC 0
+in1, DEC 0
+in2, DEC 0
+calc, DEC 0
+reset, DEC 100

@@ -1,0 +1,77 @@
+﻿/First input is the base and second input is the power.
+/Only accepts positive numbers
+/Negative inputs give wrong results
+
+Input
+Store base
+Input
+Store power
+JnS powerF
+Load Answer
+Output
+Halt
+
+powerF, Load power
+loop2, Load power
+	Skipcond 800
+    JumpI powerF
+    Load X
+    Add Answer
+    Store X
+    Load Y
+    Add base
+    Store Y
+    Jns multiply1
+    Load Temp
+    Store Temp
+    Clear
+    Store Answer
+    Load Answer
+    Add Temp
+    Store Answer
+    Clear
+	Store Temp
+    Store X
+    Store Y
+    Load power
+    Subt One
+	Store power
+    Jump loop2
+
+check, Load X
+Load X
+Subt Y
+Skipcond 800
+Jump switch
+JumpI check
+
+switch, Load X
+Load X
+Store Temp
+Load Y
+Store X
+Load Temp
+Store Y
+Clear
+Store Temp
+JumpI check
+    
+multiply1, Load Temp
+Jns check
+loop, Load Temp
+  Add X
+  Store Temp
+  Load Y
+  Subt One
+  Store Y
+  Skipcond 800
+  JumpI multiply1
+  Jump loop
+
+One, DEC 1
+X, DEC 0
+Y, DEC 0
+power, DEC 0
+base, DEC 0
+Answer, DEC 0
+Temp, DEC 0
